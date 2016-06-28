@@ -1,0 +1,28 @@
+{
+  "player_stats": {
+    "statsToSelect": {
+      "topLevelStats": ["kills", "deaths", "assists", "CS", "gold", "position"],
+      "additionaldata": ["championId"],
+      "timlineStats": ["creepsPerMinDeltas", "goldPerMinDeltas"],
+      "masteries": [],
+      "runes": [],
+      "stats": ["wardsPlaced", "wardsKilled"]
+    },
+    "fileData": {
+      "inputFile": "inputs/player.json",
+      "outputFile": "results/result_player.json",
+      "superOutputFile": "results/super_result_player.json"
+    }
+  },
+  "team_stats": {
+    "statsToSelect": {
+      "topLevelStats": ["dragons", "turrets", "barons"],
+      "additionaldata": ["firstBlood", "firstTower", "firstInhibitor", "firstBaron", "firstDragon", "firstRiftHerald", "bans", "winner"]
+    },
+    "fileData": {
+      "inputFile": "inputs/team.json",
+      "outputFile": "results/result_team.json",
+      "superOutputFile": "results/super_result_team.json"
+    }
+  }
+}
