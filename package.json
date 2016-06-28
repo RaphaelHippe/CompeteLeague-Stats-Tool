@@ -1,0 +1,13 @@
+{
+  "name": "CompeteLeagueStatsTool",
+  "version": "0.0.1",
+  "description": "A tool to gather and calculate specific stats from our RAW stats JSONs",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Raphael 'Youchra' Hippe",
+  "license": "MIT",
+  "devDependencies": {
+    "node": "4.4.3"
+  }
+}
