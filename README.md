@@ -6,7 +6,7 @@ In the future this tool should be able to request the stats from our API and cre
 Maybe I will add a web view for this tool some time as well.
 
 ## Information
-Note you need League of Legends RAW stats from the CompeteLeague database in order to use this tool successfully. If you don't have access to the our API and you want to try out this tool feel free to contact me. 
+Note you need League of Legends RAW stats from the CompeteLeague database in order to use this tool successfully. If you don't have access to our API and you want to try out this tool feel free to contact me. 
 
 ## How to use
 1. Clone this repo and make sure you have NodeJS installed on your computer.
