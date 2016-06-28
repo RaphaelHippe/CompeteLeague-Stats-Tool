@@ -13,4 +13,4 @@ Maybe I will add a web view for this tool some time as well.
 
 ## License
 The MIT License - Raphael 'Youchra' Hippe
-See the [LICENSE](https://github.com/CompeteLeague/clAngularDirectives/blob/master/LICENSE) file fore more information!
+See the [LICENSE](https://github.com/RaphaelHippe/CompeteLeague-Stats-Tool/blob/master/LICENSE) file fore more information!
