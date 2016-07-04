@@ -24,5 +24,14 @@
       "outputFile": "results/result_team.json",
       "superOutputFile": "results/super_result_team.json"
     }
+  },
+  "request": {
+    "baseurl": "https://api.competeleague.com/entity",
+    "auth": {
+      "username": "email",
+      "password": "pw",
+      "url": "https://api.competeleague.com/entity/User/Authenticate"
+    },
+    "teamid": 9
   }
 }
