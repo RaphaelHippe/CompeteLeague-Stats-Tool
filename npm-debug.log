@@ -1,0 +1,51 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\YouchraLand\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.8.2
+3 info using node@v4.4.3
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle CompeteLeagueStatsTool@0.0.1~prestart: CompeteLeagueStatsTool@0.0.1
+6 verbose lifecycle CompeteLeagueStatsTool@0.0.1~prestart: unsafe-perm in lifecycle true
+7 verbose lifecycle CompeteLeagueStatsTool@0.0.1~prestart: PATH: C:\Users\YouchraLand\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;E:\web\cl\cl_stats\codebase\node_modules\.bin;C:\Program Files\nodejs;C:\Users\YouchraLand\bin;C:\Program Files (x86)\Git\mingw64\bin;C:\Program Files (x86)\Git\usr\local\bin;C:\Program Files (x86)\Git\usr\bin;C:\Program Files (x86)\Git\usr\bin;C:\Program Files (x86)\Git\mingw64\bin;C:\Program Files (x86)\Git\usr\bin;C:\Users\YouchraLand\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Livestreamer;E:\php;C:\ProgramData\ComposerSetup\bin;E:\instantReality\bin;C:\Program Files (x86)\Windows Live\Shared;E:\skype\Phone;C:\Program Files\nodejs;C:\Program Files (x86)\Git\cmd;C:\Users\YouchraLand\AppData\Local\atom\bin;C:\Users\YouchraLand\AppData\Local\atom\bin;E:\maven\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_65\bin;C:\Users\YouchraLand\AppData\Roaming\npm;E:\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;C:\msysgit\bin;C:\Program Files (x86)\Git\usr\bin\vendor_perl;C:\Program Files (x86)\Git\usr\bin\core_perl
+8 verbose lifecycle CompeteLeagueStatsTool@0.0.1~prestart: CWD: E:\web\cl\cl_stats\codebase
+9 silly lifecycle CompeteLeagueStatsTool@0.0.1~prestart: Args: [ '/d /s /c', 'node scripts/cleaning.js' ]
+10 silly lifecycle CompeteLeagueStatsTool@0.0.1~prestart: Returned: code: 0  signal: null
+11 info lifecycle CompeteLeagueStatsTool@0.0.1~start: CompeteLeagueStatsTool@0.0.1
+12 verbose lifecycle CompeteLeagueStatsTool@0.0.1~start: unsafe-perm in lifecycle true
+13 verbose lifecycle CompeteLeagueStatsTool@0.0.1~start: PATH: C:\Users\YouchraLand\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;E:\web\cl\cl_stats\codebase\node_modules\.bin;C:\Program Files\nodejs;C:\Users\YouchraLand\bin;C:\Program Files (x86)\Git\mingw64\bin;C:\Program Files (x86)\Git\usr\local\bin;C:\Program Files (x86)\Git\usr\bin;C:\Program Files (x86)\Git\usr\bin;C:\Program Files (x86)\Git\mingw64\bin;C:\Program Files (x86)\Git\usr\bin;C:\Users\YouchraLand\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Livestreamer;E:\php;C:\ProgramData\ComposerSetup\bin;E:\instantReality\bin;C:\Program Files (x86)\Windows Live\Shared;E:\skype\Phone;C:\Program Files\nodejs;C:\Program Files (x86)\Git\cmd;C:\Users\YouchraLand\AppData\Local\atom\bin;C:\Users\YouchraLand\AppData\Local\atom\bin;E:\maven\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_65\bin;C:\Users\YouchraLand\AppData\Roaming\npm;E:\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;C:\msysgit\bin;C:\Program Files (x86)\Git\usr\bin\vendor_perl;C:\Program Files (x86)\Git\usr\bin\core_perl
+14 verbose lifecycle CompeteLeagueStatsTool@0.0.1~start: CWD: E:\web\cl\cl_stats\codebase
+15 silly lifecycle CompeteLeagueStatsTool@0.0.1~start: Args: [ '/d /s /c', 'node main.js' ]
+16 silly lifecycle CompeteLeagueStatsTool@0.0.1~start: Returned: code: 1  signal: null
+17 info lifecycle CompeteLeagueStatsTool@0.0.1~start: Failed to exec start script
+18 verbose stack Error: CompeteLeagueStatsTool@0.0.1 start: `node main.js`
+18 verbose stack Exit status 1
+18 verbose stack     at EventEmitter.<anonymous> (C:\Users\YouchraLand\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:239:16)
+18 verbose stack     at emitTwo (events.js:87:13)
+18 verbose stack     at EventEmitter.emit (events.js:172:7)
+18 verbose stack     at ChildProcess.<anonymous> (C:\Users\YouchraLand\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:24:14)
+18 verbose stack     at emitTwo (events.js:87:13)
+18 verbose stack     at ChildProcess.emit (events.js:172:7)
+18 verbose stack     at maybeClose (internal/child_process.js:827:16)
+18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+19 verbose pkgid CompeteLeagueStatsTool@0.0.1
+20 verbose cwd E:\web\cl\cl_stats\codebase
+21 error Windows_NT 10.0.10586
+22 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\YouchraLand\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+23 error node v4.4.3
+24 error npm  v3.8.2
+25 error code ELIFECYCLE
+26 error CompeteLeagueStatsTool@0.0.1 start: `node main.js`
+26 error Exit status 1
+27 error Failed at the CompeteLeagueStatsTool@0.0.1 start script 'node main.js'.
+27 error Make sure you have the latest version of node.js and npm installed.
+27 error If you do, this is most likely a problem with the CompeteLeagueStatsTool package,
+27 error not with npm itself.
+27 error Tell the author that this fails on your system:
+27 error     node main.js
+27 error You can get information on how to open an issue for this project with:
+27 error     npm bugs CompeteLeagueStatsTool
+27 error Or if that isn't available, you can get their info via:
+27 error     npm owner ls CompeteLeagueStatsTool
+27 error There is likely additional logging output above.
+28 verbose exit [ 1, true ]

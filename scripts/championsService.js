@@ -40,7 +40,7 @@ function MyAfter(amount, cb) {
 
 
 function start(users, next) {
-
+  console.log('testssssssssss');
   var MyRequestCounter = new MyAfter(users.length, function () {
 
     myFSAPI.readFile(config.team_stats.fileData.outputFilePath + 'tmpTeamResult' + config.request.teamid + '.json', function(err, data) {

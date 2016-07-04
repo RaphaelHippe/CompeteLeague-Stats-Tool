@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A tool to gather and calculate specific stats from our RAW stats JSONs",
   "scripts": {
+    "prestart": "node scripts/cleaning.js",
     "start": "node main.js"
   },
   "author": "Raphael 'Youchra' Hippe",
