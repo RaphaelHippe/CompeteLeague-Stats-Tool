@@ -35,7 +35,11 @@ function getStats(cb) {
         }, function(error, response, body) {
           if (error) {
             console.log('error', error);
-          } else {
+			return;
+          } else if(response.statusCode != 200){
+			console.log('API did not send the expected result. Error is: ', JSON.parse(body));
+			return;
+		  } else {
             team = JSON.parse(body);
             var MyRequestCounter = new MyAfter(team.users.length, function () {
               cb(team.users);
@@ -58,7 +62,12 @@ function getStats(cb) {
                   },
                   url: config.request.baseurl + '/User/' + user.user + '/lolstatsdetail'
                 }, function (error, response, body) {
-                  MyRequestCounter.called();
+					if(response.statusCode != 200){
+						console.log('API did not send the expected result. Error is: ', JSON.parse(body));
+						return;
+					}else{
+						MyRequestCounter.called();
+					}
                 })
                 .pipe(fs.createWriteStream(config.player_stats.fileData.inputFilePath + 'userStatsRaw' + user.user + '.json'));
               });

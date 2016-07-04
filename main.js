@@ -1,6 +1,8 @@
 var playerStats = require('./scripts/getStats');
 var teamStats = require('./scripts/getTeamStats');
 var championsService = require('./scripts/championsService');
+var fs = require('fs');
+var config = require('./config.json');
 
 var arg = process.argv[2];
 
@@ -37,6 +39,11 @@ function main(arg) {
 }
 
 function main2() {
+  console.log('creating output directories')
+  fs.existsSync('./' + config.player_stats.fileData.inputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.inputFilePath);
+  fs.existsSync('./' + config.player_stats.fileData.outputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.outputFilePath);
+  fs.existsSync('./' + config.player_stats.fileData.superOutputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.superOutputFilePath);
+  console.log('done')  
   console.log('calc player stats...');
   playerStats.start(function(users) {
     console.log('done');
