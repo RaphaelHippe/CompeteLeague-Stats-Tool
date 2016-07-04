@@ -28,8 +28,8 @@
   "request": {
     "baseurl": "https://api.competeleague.com/entity",
     "auth": {
-      "username": "YouchraSpeedTest@raphaelhippe.de",
-      "password": "schneider123",
+      "username": "email",
+      "password": "password",
       "url": "https://api.competeleague.com/entity/User/Authenticate"
     },
     "teamid": 109
