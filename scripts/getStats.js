@@ -1,10 +1,13 @@
 
 var myFSAPI = require('./myFSapi');
 var config = require('./../config.json');
+var api = require('./request');
 var statsToSelect = config.player_stats.statsToSelect;
 var globalResult = {
   gameCounter: 0
 };
+
+var users_global;
 
 //
 // starting the script
@@ -56,7 +59,7 @@ function initGlobalResult(statsToSelect) {
   }
 }
 
-function addStats(data, statsToSelect, cb, next) {
+function addStats(data, userid, statsToSelect, cb, next) {
   for (var i = 0; i < data.length; i++) {
     globalResult.gameCounter++;
 
@@ -91,27 +94,38 @@ function addStats(data, statsToSelect, cb, next) {
       }
     }
   }
-  cb(globalResult, next);
+  cb(globalResult, userid, next);
 }
 
 
 function extractStats(statsToSelect, next) {
-  myFSAPI.readFile(config.player_stats.fileData.inputFile, function(err, data) {
+
+  api.getStats(function (users) {
+    users_global = users;
+    for (var i = 0; i < users.length; i++) {
+      readFile(config.player_stats.fileData.inputFilePath + 'userStatsRaw' + users[i].user + '.json', users[i].user, statsToSelect, next);
+    }
+  });
+
+}
+
+function readFile(filename, userid, statsToSelect, next) {
+  myFSAPI.readFile(filename, function(err, data) {
     if (err) {
       throw err;
     }
     var myData = JSON.parse(data);
     initGlobalResult(statsToSelect);
-    addStats(myData.matches, statsToSelect, writeResult, next);
+    addStats(myData.matches, userid, statsToSelect, writeResult, next);
   });
 }
 
-function writeResult(myjson, next) {
-  myFSAPI.writeFile(config.player_stats.fileData.outputFile, myjson, function(err) {
+function writeResult(myjson, userid, next) {
+  myFSAPI.writeFile(config.player_stats.fileData.outputFilePath + 'tmpUserResult' + userid + '.json', myjson, function(err) {
     if (err) {
       throw err;
     }
     console.log('saved');
-    next();
+    next(users_global);
   });
 }

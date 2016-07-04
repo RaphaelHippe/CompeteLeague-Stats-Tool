@@ -1,6 +1,4 @@
 var myFSAPI = require('./myFSapi');
-var sortedStatsPlayer = require('./../results/result_player.json');
-var sortedStatsTeam = require('./../results/result_team.json');
 var config = require('./../config.json');
 //
 // starting the script
@@ -9,35 +7,46 @@ module.exports = {
   start: start
 };
 
-function start(next) {
-  main(next);
+function start(users, next) {
+  for (var i = 0; i < users.length; i++) {
+    main(users[i].user, null);
+  }
+  main(null, next);
 }
 
 
-function main(next) {
+function main(userid, next) {
   var resultPlayer = {};
-  resultPlayer.champions = countChampions(sortedStatsPlayer.additionaldata.championId);
-  resultPlayer.avgCSDeltas = csDeltas(sortedStatsPlayer.timlineStats.creepsPerMinDeltas, sortedStatsPlayer.gameCounter);
-  resultPlayer.avgGoldDeltas = goldDeltas(sortedStatsPlayer.timlineStats.goldPerMinDeltas, sortedStatsPlayer.gameCounter);
-  resultPlayer.gameCounter = sortedStatsPlayer.gameCounter;
-  myFSAPI.writeFile(config.player_stats.fileData.superOutputFile, resultPlayer, function(err) {
-    if (err) {
-      throw err;
-    }
-    console.log('saved player');
+  if (userid) {
+    var sortedStatsPlayer = require('./../results/StatsForUser' + userid + '.json');
+    resultPlayer.champions = countChampions(sortedStatsPlayer.additionaldata.championId);
+    resultPlayer.avgCSDeltas = csDeltas(sortedStatsPlayer.timlineStats.creepsPerMinDeltas, sortedStatsPlayer.gameCounter);
+    resultPlayer.avgGoldDeltas = goldDeltas(sortedStatsPlayer.timlineStats.goldPerMinDeltas, sortedStatsPlayer.gameCounter);
+    resultPlayer.gameCounter = sortedStatsPlayer.gameCounter;
+    myFSAPI.writeFile(config.player_stats.fileData.superOutputFilePath  + 'StatsForUser' + userid + '.json', resultPlayer, function(err) {
+      if (err) {
+        throw err;
+      }
+      console.log('saved player');
+    });
+
+  } else {
+    var sortedStatsTeam = require('./../results/StatsForTeam' + config.request.teamid + '.json');
     var resultTeam = {};
     resultTeam.bans = countChampionBans(sortedStatsTeam.additionaldata.bans);
     resultTeam.ObjectivesAvg = teamObjectiveAvg(sortedStatsTeam.topLevelStats, sortedStatsTeam.gameCounter);
     resultTeam.firsts = teamFirsts(sortedStatsTeam.additionaldata);
     resultTeam.gameCounter = sortedStatsTeam.gameCounter;
-    myFSAPI.writeFile(config.team_stats.fileData.superOutputFile, resultTeam, function(err) {
+    myFSAPI.writeFile(config.team_stats.fileData.superOutputFilePath  + 'StatsForTeam' + config.request.teamid + '.json', resultTeam, function(err) {
       if (err) {
         throw err;
       }
       console.log('saved team');
-      next();
+      if (next) {
+        next();
+      }
     });
-  });
+  }
 }
 
 

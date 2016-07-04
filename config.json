@@ -9,9 +9,9 @@
       "stats": ["wardsPlaced", "wardsKilled"]
     },
     "fileData": {
-      "inputFile": "inputs/player.json",
-      "outputFile": "results/result_player.json",
-      "superOutputFile": "results/super_result_player.json"
+      "inputFilePath": "inputs/",
+      "outputFilePath": "inputs/",
+      "superOutputFilePath": "results/"
     }
   },
   "team_stats": {
@@ -20,16 +20,16 @@
       "additionaldata": ["firstBlood", "firstTower", "firstInhibitor", "firstBaron", "firstDragon", "firstRiftHerald", "bans", "winner"]
     },
     "fileData": {
-      "inputFile": "inputs/team.json",
-      "outputFile": "results/result_team.json",
-      "superOutputFile": "results/super_result_team.json"
+      "inputFilePath": "inputs/",
+      "outputFilePath": "inputs/",
+      "superOutputFilePath": "results/"
     }
   },
   "request": {
     "baseurl": "https://api.competeleague.com/entity",
     "auth": {
       "username": "email",
-      "password": "pw",
+      "password": "password",
       "url": "https://api.competeleague.com/entity/User/Authenticate"
     },
     "teamid": 9

@@ -6,12 +6,13 @@ var statsToSelect = config.team_stats.statsToSelect;
 var globalResult = {
   gameCounter: 0
 };
-
+var users_global;
 module.exports = {
   start: start
 };
 
-function start(next) {
+function start(users, next) {
+  users_global = users;
   extractStats(statsToSelect, next);
 }
 
@@ -49,7 +50,7 @@ function addStats(data, statsToSelect, cb, next) {
 
 
 function extractStats(statsToSelect, next) {
-  myFSAPI.readFile(config.team_stats.fileData.inputFile, function(err, data) {
+  myFSAPI.readFile(config.team_stats.fileData.inputFilePath + 'teamStatsRaw' + config.request.teamid + '.json', function(err, data) {
     if (err) {
       throw err;
     }
@@ -60,11 +61,11 @@ function extractStats(statsToSelect, next) {
 }
 
 function writeResult(myjson, next) {
-  myFSAPI.writeFile(config.team_stats.fileData.outputFile, myjson, function(err) {
+  myFSAPI.writeFile(config.team_stats.fileData.outputFilePath + 'tmpTeamResult' + config.request.teamid + '.json', myjson, function(err) {
     if (err) {
       throw err;
     }
     console.log('saved');
-    next();
+    next(users_global);
   });
 }
