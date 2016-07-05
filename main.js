@@ -39,11 +39,11 @@ function main(arg) {
 }
 
 function main2() {
-  console.log('creating output directories')
+  console.log('creating output directories');
   fs.existsSync('./' + config.player_stats.fileData.inputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.inputFilePath);
   fs.existsSync('./' + config.player_stats.fileData.outputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.outputFilePath);
   fs.existsSync('./' + config.player_stats.fileData.superOutputFilePath) || fs.mkdirSync('./' + config.player_stats.fileData.superOutputFilePath);
-  console.log('done')  
+  console.log('done')
   console.log('calc player stats...');
   playerStats.start(function(users) {
     console.log('done');

@@ -28,8 +28,8 @@
   "request": {
     "baseurl": "https://api.competeleague.com/entity",
     "auth": {
-      "username": "email",
-      "password": "password",
+      "username": "",
+      "password": "",
       "url": "https://api.competeleague.com/entity/User/Authenticate"
     },
     "teamid": 109
